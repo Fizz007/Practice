@@ -7,8 +7,12 @@ const Appp = () => {
     console.log("app comp render")
 
     const memoizecart = useMemo(()=> {
-        return <Cart counter={counter}/>
-    },[])
+        return <Cart counter={counter} changecounter={changecounter}/>
+    },[counter])
+
+    function changecounter(){
+      setCounter(counter + 1)
+    }
 
     // const changecounterfromChild = useCallback(()=>{
     //     setCounter(counter + 1)
